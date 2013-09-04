@@ -1,0 +1,114 @@
+# Czech QWERTZ keyboard map for Linux console
+#
+# Author: Jakub Klinkovský <kuba.klinkovsky@gmail.com> (c) 2013
+# URL: https://github.com/lahwaacz/keymaps-czech-console
+#
+# You can distribute this file under the terms of GNU General
+# Public License (GPL). See the file LICENSE.
+#
+
+charset "iso-8859-2"
+
+# We define at most 16 levels for each keycode:
+# plain, Shift, AltGr, Shift+AltGr,
+# Control, Control+Shift, Control+AltGr, Control+Shift+AltGr,
+# Alt, Alt+Shift, Alt+AltGr, Alt+Shift+Altgr
+# Alt+Control, Alt+Control+Shift, Alt+Control+AltGr, Alt+Control+Shift+AltGr.
+#
+# Note that incomplete lines are completed with VoidSymbol.
+keymaps 0-15
+
+alt_is_meta
+strings as usual
+
+## Digits row (accented characters)
+keycode  41 = semicolon      degree         grave          asciitilde
+keycode   2 = plus           one            exclam
+keycode   3 = +ecaron        two            at
+keycode   4 = +scaron        three          numbersign
+keycode   5 = +ccaron        four           dollar
+keycode   6 = +rcaron        five           percent
+keycode   7 = +zcaron        six            asciicircum
+keycode   8 = +yacute        seven          ampersand
+keycode   9 = +aacute        eight          asterisk
+keycode  10 = +iacute        nine           parenleft
+keycode  11 = +eacute        zero           parenright
+keycode  12 = equal          percent        minus          underscore
+keycode  13 = dead_acute     dead_caron     equal          plus
+
+## Top letters row
+keycode  16 = q              Q              backslash
+keycode  17 = w              W              bar
+keycode  18 = e              E              euro
+keycode  19 = r              R              pilcrow        registered
+keycode  20 = t              T
+keycode  21 = z              Z
+keycode  22 = u              U
+keycode  23 = i              I
+keycode  24 = o              O
+keycode  25 = p              P
+keycode  26 = +uacute        slash          bracketleft    braceleft
+keycode  27 = parenright     parenleft      bracketright   braceright
+
+## Middle letters row
+keycode  30 = a              A              asciitilde
+keycode  31 = s              S
+keycode  32 = d              D
+keycode  33 = f              F              bracketleft
+keycode  34 = g              G              bracketright
+keycode  35 = h              H
+keycode  36 = j              J
+keycode  37 = k              K
+keycode  38 = l              L
+keycode  39 = +uring         quotedbl       semicolon      colon
+keycode  40 = section        exclam         apostrophe     quotedbl
+keycode  43 = dead_diaeresis apostrophe     backslash      bar
+
+## Bottom letters row
+keycode  86 = backslash      bar            slash          brokenbar
+keycode  44 = y              Y              degree
+keycode  45 = x              X              numbersign
+keycode  46 = c              C              ampersand      copyright
+keycode  47 = v              V              at
+keycode  48 = b              B              braceleft
+keycode  49 = n              N              braceright
+keycode  50 = m              M              asciicircum
+keycode  51 = comma          question       less
+keycode  52 = period         colon          greater
+keycode  53 = minus          underscore     slash          question
+
+
+## Modifiers (starting with Escape, counter-clockwise)
+keycode   1 = Escape
+keycode  15 = Tab            Meta_Tab
+keycode  58 = Caps_Lock
+keycode  42 = Shift
+keycode  29 = Control
+
+# Left windows key
+#keycode 125 = Decr_Console
+
+keycode  56 = Alt
+keycode  57 = space
+
+# AltGr defined in included file "linux-with-alt-and-altgr.inc"
+include "linux-with-alt-and-altgr"
+
+# Right windows key
+#keycode 126 = Incr_Console
+
+# Menu key
+#keycode 127 = Last_Console
+
+keycode  97 = Control
+keycode  54 = Shift
+keycode  28 = Return
+
+# Linux console uses "Delete" (0x7f) instead of "BackSpace" (0x08) (Control-H)
+keycode  14 = Delete
+
+# The rest (F## keys, Insert, Home, PageUp, ...) is defined in (indirectly) included file "linux-keys-bare.inc"
+
+
+## Include compose key combinations
+include "compose.latin1"
